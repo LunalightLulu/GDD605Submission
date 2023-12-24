@@ -100,11 +100,13 @@ MonoBehaviour:
   PlayerCam: {fileID: 0}
   CameraController: {fileID: 0}
   HitParticle: {fileID: 0}
+  FireParticle: {fileID: 0}
+  FireParticleOffset: {x: 0, y: 0, z: 0.25}
   RateOfFire: 0.6
   ReloadSpeed: 0
   WeaponDamage: 30
   Range: 80
   UnzoomedFoV: 70
-  ZoomedFoV: 30
+  ZoomedFoV: 40
   MaxLoadedAmmo: 0
   MaxHeldAmmo: 0

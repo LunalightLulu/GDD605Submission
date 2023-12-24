@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class FireShotgun : MonoBehaviour
 {
+    [SerializeField] GameObject Player;
+    [SerializeField] Camera PlayerCam;
+    [SerializeField] ParticleSystem HitParticle;
     [SerializeField] float RateOfFire;
     [SerializeField] float ReloadSpeed;
+    [SerializeField] int WeaponDamage;
     [SerializeField] int Range;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5123981478236654774}
   - component: {fileID: 8121064990488986387}
   - component: {fileID: 6293541735069251545}
+  - component: {fileID: 4879535556901317513}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -83,3 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4879535556901317513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501105907482383884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb682ab688a9f743800380c9b431e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerCam: {fileID: 0}
+  CameraController: {fileID: 0}
+  HitParticle: {fileID: 0}
+  RateOfFire: 0.6
+  ReloadSpeed: 0
+  WeaponDamage: 30
+  Range: 80
+  UnzoomedFoV: 70
+  ZoomedFoV: 30
+  MaxLoadedAmmo: 0
+  MaxHeldAmmo: 0

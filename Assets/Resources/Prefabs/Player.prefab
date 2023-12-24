@@ -487,9 +487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 4767501799606318970}
   PlayerCam: {fileID: 0}
-  RateOfFire: 0.2
+  HitParticle: {fileID: 0}
+  RateOfFire: 0.4
   ReloadSpeed: 0
-  WeaponDamage: 50
+  WeaponDamage: 20
   Range: 60
   MaxLoadedAmmo: 0
   MaxHeldAmmo: 0
@@ -500,6 +501,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1785749843632769126}
     m_Modifications:
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 4767501799606318970}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: PlayerCam
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5123981478236654774, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -635,6 +644,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 347200878047270528, guid: 45cfd42474c74d140aa1d221b9a138ef, type: 3}
   m_PrefabInstance: {fileID: 8656935248128061997}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1796297722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9003291478974080173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8baf5a197ec17f445aa201ed7cea0aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RateOfFire: 0
+  ReloadSpeed: 0
+  Range: 0
+  MaxLoadedAmmo: 0
+  MaxHeldAmmo: 0
 --- !u!1001 &9058763769941709017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -706,3 +732,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7238387610004187038, guid: 2b5c517001b1ef64fa4d6fc3164eabfd, type: 3}
   m_PrefabInstance: {fileID: 9058763769941709017}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &934850927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856849228386449223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd1897c97b3c9f54d906e644e6cee53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PlayerCam: {fileID: 0}
+  HitParticle: {fileID: 0}
+  RateOfFire: 0
+  ReloadSpeed: 0
+  WeaponDamage: 0
+  Range: 0
+  MaxLoadedAmmo: 0
+  MaxHeldAmmo: 0

@@ -8,14 +8,11 @@ public class TimedDeletion : MonoBehaviour
     void Start()
     {
         StartCoroutine("DeleteSelf");
-        Debug.Log("I wake");
     }
 
     private IEnumerator DeleteSelf()
     {
-        Debug.Log("I IEnumerate");
         yield return new WaitForSeconds(TimeTillDeletion);
         Destroy(gameObject);
-        Debug.Log("Why am I alive");
     }
 }

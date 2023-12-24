@@ -7,6 +7,8 @@ public class FirePistol : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
     [SerializeField] ParticleSystem HitParticle;
+    [SerializeField] ParticleSystem FireParticle;
+    [SerializeField] Vector3 FireParticleOffset;
     [SerializeField] float RateOfFire;
     [SerializeField] float ReloadSpeed;
     [SerializeField] int WeaponDamage;
@@ -19,6 +21,7 @@ public class FirePistol : MonoBehaviour
     void Start()
     {
         HitParticle = Resources.Load<ParticleSystem>("Prefabs/HitParticle");
+        FireParticle = Resources.Load<ParticleSystem>("Prefabs/FireParticlePistol");
         RoFReset = true;
     }
 
@@ -27,22 +30,35 @@ public class FirePistol : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && RoFReset)
         {
-            //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
-            RaycastHit Hit;
-            Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);
-            if (Hit.collider != null)
-            {
-                Debug.Log("Hit Something");
-                GameObject ThingHit = Hit.collider.gameObject;
-                Instantiate(HitParticle, Hit.point, Quaternion.identity);
-                //Instantiate particle effect at hit location
-                if (ThingHit.CompareTag("Enemy"))
-                {
-                    ThingHit.GetComponent<EnemyHealth>().TakeDamage(WeaponDamage);
-                }
-            }
+            HitCheck();
             StartCoroutine("ResetRoF");
         }
+    }
+
+    private void HitCheck()
+    {
+        CreateFireParticles();
+        //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
+        RaycastHit Hit;
+        Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);
+        if (Hit.collider != null)
+        {
+            GameObject ThingHit = Hit.collider.gameObject;
+            CreateHitParticles(Hit);
+            if (ThingHit.CompareTag("Enemy"))
+            {
+                ThingHit.GetComponent<EnemyHealth>().TakeDamage(WeaponDamage);
+            }
+        }
+    }
+
+    private void CreateFireParticles()
+    {
+        Instantiate(FireParticle, transform.position + FireParticleOffset, Player.transform.rotation);
+    }
+    private void CreateHitParticles(RaycastHit Hit)
+    {
+        Instantiate(HitParticle, Hit.point, Quaternion.identity);
     }
 
     private IEnumerator ResetRoF()

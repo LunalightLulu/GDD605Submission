@@ -564,6 +564,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+--- !u!114 &1165712393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+  m_PrefabInstance: {fileID: 906278218}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1300504654
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +813,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: PlayerCam
+      value: 
+      objectReference: {fileID: 1601749973}
+    - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: ZoomedFoV
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: CameraController
+      value: 
+      objectReference: {fileID: 1165712393}
     - target: {fileID: 546160659269964955, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -850,13 +873,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3189459726146669437, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1601749973}
     - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
-      propertyPath: RateOfFire
-      value: 0.4
+      propertyPath: FireParticleOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: FireParticleOffset.z
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}

@@ -6,7 +6,7 @@ public class FireShotgun : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
-    [SerializeField] ParticleSystem HitParticle;
+    [SerializeField] ParticleSystem ShotParticle;
     [SerializeField] float RateOfFire;
     [SerializeField] float ReloadSpeed;
     [SerializeField] int WeaponDamage;

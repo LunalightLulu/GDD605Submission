@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] int EnemyType;
+    [SerializeField] ChasingEnemy ChasingBehaviour;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
     void Start()
     {
         CurrentHP = MaxHP;
+        if (EnemyType == 0)
+        {
+            ChasingBehaviour = gameObject.GetComponent<ChasingEnemy>();
+        }
     }
 
     public void TakeDamage(int Damage)
@@ -17,6 +23,10 @@ public class EnemyHealth : MonoBehaviour
         if (CurrentHP <= 0)
         {
             Die();
+        }
+        if (EnemyType == 0)
+        {
+            ChasingBehaviour.Hit();
         }
     }
 

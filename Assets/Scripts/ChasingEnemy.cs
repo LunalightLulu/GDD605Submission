@@ -19,6 +19,7 @@ public class ChasingEnemy : MonoBehaviour
     NavMeshAgent Agent;
     private void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         PlayerHP = Player.GetComponent<PlayerHealth>();
         Agent = gameObject.GetComponent<NavMeshAgent>();
         RealRotationRangeMax = gameObject.transform.eulerAngles.y + LookRotationRange;
@@ -65,7 +66,8 @@ public class ChasingEnemy : MonoBehaviour
     }
     private void Chase()
     {
-        gameObject.transform.LookAt(Player.transform);
+        Vector3 Target = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+        gameObject.transform.LookAt(Target);
         Agent.SetDestination(Player.transform.position);
         if (Vector3.Distance(gameObject.transform.position, Player.transform.position) < AttackRange)
         {
@@ -75,5 +77,9 @@ public class ChasingEnemy : MonoBehaviour
     private void Attack()
     {
         PlayerHP.TakeDamage(AttackDamage);
+    }
+    public void Hit()
+    {
+        Chasing = true;
     }
 }

@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 6935514623145665745}
   - component: {fileID: 3490806178998571613}
   - component: {fileID: 927612422102191661}
+  - component: {fileID: 1215651531}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -272,6 +273,22 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1215651531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927612422102191649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d089d20c7cd7a34383f01e2ac1ece18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 0}
+  MaxHP: 100
+  CurrentHP: 0
+  IFrameTime: 0.2
 --- !u!1 &3572366379897887287
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +303,7 @@ GameObject:
   - component: {fileID: 3572366379897887285}
   m_Layer: 10
   m_Name: PlayerCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,6 +505,7 @@ MonoBehaviour:
   Player: {fileID: 4767501799606318970}
   PlayerCam: {fileID: 0}
   SwitchScript: {fileID: 30038434}
+  Tracker: {fileID: 0}
   HitParticle: {fileID: 0}
   FireParticle: {fileID: 0}
   FireParticleOffset: {x: 0, y: 0, z: 0.1}
@@ -512,6 +530,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: RateOfFire
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxHeldAmmo
       value: 90
       objectReference: {fileID: 0}
@@ -519,6 +541,10 @@ PrefabInstance:
       propertyPath: SwitchScript
       value: 
       objectReference: {fileID: 30038434}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: WeaponDamage
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxLoadedAmmo
       value: 15
@@ -670,11 +696,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8baf5a197ec17f445aa201ed7cea0aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RateOfFire: 0
-  ReloadSpeed: 0
+  SwitchScript: {fileID: 30038434}
+  FireParticle: {fileID: 0}
+  RateOfFire: 0.05
   Range: 0
-  MaxLoadedAmmo: 0
-  MaxHeldAmmo: 0
+  MaxLoadedAmmo: 50
+  MaxHeldAmmo: 150
+--- !u!1001 &8884217457589417917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8627152281453559319}
+    m_Modifications:
+    - target: {fileID: 3708251090719516492, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386866926262684979, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845397624307227830, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_Name
+      value: FlamethrowerParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845397624307227830, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e42c6d0635ef614391549ad7745c381, type: 3}
 --- !u!1001 &9058763769941709017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,12 +850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd1897c97b3c9f54d906e644e6cee53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  PlayerCam: {fileID: 0}
-  SwitchScript: {fileID: 0}
+  SwitchScript: {fileID: 30038434}
+  Tracker: {fileID: 0}
   ShotParticle: {fileID: 0}
   RateOfFire: 0.8
-  WeaponDamage: 0
-  Range: 0
   MaxLoadedAmmo: 2
   MaxHeldAmmo: 12

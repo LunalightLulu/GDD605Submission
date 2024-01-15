@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class FireShotgun : MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-    [SerializeField] Camera PlayerCam;
     [SerializeField] WeaponSwitch SwitchScript;
     [SerializeField] ParticleSystem ShotParticle;
     [SerializeField] float RateOfFire;
-    [SerializeField] int WeaponDamage;
-    [SerializeField] int Range;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
     private bool RoFReset;
@@ -18,6 +14,7 @@ public class FireShotgun : MonoBehaviour
     private int CurrentHeldAmmo;
     void Start()
     {
+        ShotParticle = Resources.Load<ParticleSystem>("Prefabs/ShotgunParticle");
         RoFReset = true;
         StartingAmmo();
     }
@@ -49,7 +46,8 @@ public class FireShotgun : MonoBehaviour
     }
     private void Fire()
     {
-        Instantiate(ShotParticle);
+        CurrentLoadedAmmo--;
+        Instantiate(ShotParticle, gameObject.transform);
     }
     private void Reload()
     {

@@ -22,8 +22,6 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        //Instantiate a particle effect splash thingy.
-        Destroy(gameObject);
-        //Do score things probably.
+        gameObject.SetActive(false);
     }
 }

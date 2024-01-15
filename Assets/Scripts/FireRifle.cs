@@ -63,6 +63,7 @@ public class FireRifle : MonoBehaviour
     private void Fire()
     {
         CreateFireParticles();
+        CurrentLoadedAmmo--;
         //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
         RaycastHit Hit;
         Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);

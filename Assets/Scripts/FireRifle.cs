@@ -9,6 +9,7 @@ public class FireRifle : MonoBehaviour
     [SerializeField] Camera PlayerCam;
     [SerializeField] CinemachineVirtualCamera CameraController;
     [SerializeField] WeaponSwitch SwitchScript;
+    [SerializeField] AmmoTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
@@ -29,6 +30,11 @@ public class FireRifle : MonoBehaviour
         FireParticle = Resources.Load<ParticleSystem>("Prefabs/FireParticleRifle");
         RoFReset = true;
         StartingAmmo();
+        UpdateAmmoCount();
+    }
+    private void OnEnable()
+    {
+        UpdateAmmoCount();
     }
     void Update()
     {
@@ -64,6 +70,7 @@ public class FireRifle : MonoBehaviour
     {
         CreateFireParticles();
         CurrentLoadedAmmo--;
+        UpdateAmmoCount();
         //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
         RaycastHit Hit;
         Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);
@@ -89,6 +96,7 @@ public class FireRifle : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        UpdateAmmoCount();
     }
     private void Sputter()
     {
@@ -114,6 +122,10 @@ public class FireRifle : MonoBehaviour
         yield return new WaitForSeconds(RateOfFire);
         RoFReset = true;
         SwitchScript.EnableSwitch();
+    }
+    private void UpdateAmmoCount()
+    {
+        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
     }
     private void RifleZoom()
     {

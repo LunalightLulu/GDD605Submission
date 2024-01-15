@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] UIManager UI;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
     [SerializeField] float IFrameTime;
@@ -41,8 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        //Death screen.
-        Destroy(gameObject);
+        UI.PlayerDied();
+        gameObject.SetActive(false);
     }
     private IEnumerator IFrames()
     {

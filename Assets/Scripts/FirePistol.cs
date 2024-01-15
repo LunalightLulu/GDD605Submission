@@ -7,6 +7,7 @@ public class FirePistol : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
     [SerializeField] WeaponSwitch SwitchScript;
+    [SerializeField] AmmoTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
@@ -24,6 +25,11 @@ public class FirePistol : MonoBehaviour
         FireParticle = Resources.Load<ParticleSystem>("Prefabs/FireParticlePistol");
         RoFReset = true;
         StartingAmmo();
+        UpdateAmmoCount();
+    }
+    private void OnEnable()
+    {
+        UpdateAmmoCount();
     }
     void Update()
     {
@@ -54,6 +60,7 @@ public class FirePistol : MonoBehaviour
     private void Fire()
     {
         CurrentLoadedAmmo--;
+        UpdateAmmoCount();
         CreateFireParticles();
         //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
         RaycastHit Hit;
@@ -80,6 +87,7 @@ public class FirePistol : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        UpdateAmmoCount();
     }
     private void Sputter()
     {
@@ -105,5 +113,9 @@ public class FirePistol : MonoBehaviour
         yield return new WaitForSeconds(RateOfFire);
         RoFReset = true;
         SwitchScript.EnableSwitch();
+    }
+    private void UpdateAmmoCount()
+    {
+        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
     }
 }

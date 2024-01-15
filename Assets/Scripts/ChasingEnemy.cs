@@ -10,7 +10,7 @@ public class ChasingEnemy : MonoBehaviour
     [SerializeField] Vector3 RotationRate;
     [SerializeField] int LookRotationRange;
     [SerializeField] int DetectionRange;
-    [SerializeField] int AttackRange;
+    [SerializeField] float AttackRange;
     [SerializeField] int AttackDamage;
     private float RealRotationRangeMax;
     private float RealRotationRangeMin;

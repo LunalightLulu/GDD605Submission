@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireShotgun : MonoBehaviour
 {
     [SerializeField] WeaponSwitch SwitchScript;
+    [SerializeField] AmmoTracker Tracker;
     [SerializeField] ParticleSystem ShotParticle;
     [SerializeField] float RateOfFire;
     [SerializeField] int MaxLoadedAmmo;
@@ -17,6 +18,11 @@ public class FireShotgun : MonoBehaviour
         ShotParticle = Resources.Load<ParticleSystem>("Prefabs/ShotgunParticle");
         RoFReset = true;
         StartingAmmo();
+        UpdateAmmoCount();
+    }
+    private void OnEnable()
+    {
+        UpdateAmmoCount();
     }
     void Update()
     {
@@ -47,6 +53,7 @@ public class FireShotgun : MonoBehaviour
     private void Fire()
     {
         CurrentLoadedAmmo--;
+        UpdateAmmoCount();
         Instantiate(ShotParticle, gameObject.transform);
     }
     private void Reload()
@@ -61,6 +68,7 @@ public class FireShotgun : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        UpdateAmmoCount();
     }
     private void Sputter()
     {
@@ -78,5 +86,9 @@ public class FireShotgun : MonoBehaviour
         yield return new WaitForSeconds(RateOfFire);
         RoFReset = true;
         SwitchScript.EnableSwitch();
+    }
+    private void UpdateAmmoCount()
+    {
+        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
     }
 }

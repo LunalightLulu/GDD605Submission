@@ -60,4 +60,12 @@ public class WeaponSwitch : MonoBehaviour
         Weapons[NewWeapon].SetActive(true);
         CurrentWeapon = NewWeapon;
     }
+    public void EnableSwitch()
+    {
+        CanSwitch = true;
+    }
+    public void DisableSwitch()
+    {
+        CanSwitch = false;
+    }
 }

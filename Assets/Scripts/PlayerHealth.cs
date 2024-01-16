@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         UI.PlayerDied();
         gameObject.SetActive(false);

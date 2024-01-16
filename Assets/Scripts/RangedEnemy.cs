@@ -5,11 +5,17 @@ using UnityEngine;
 public class RangedEnemy : MonoBehaviour
 {
     [SerializeField] GameObject Player;
+    [SerializeField] GameObject ProjectilePrefab;
     [SerializeField] int DetectionRange;
+    [SerializeField] float ReloadSpeed;
     private float Proximity;
+    private bool PlayerDetected;
+    private bool Loaded;
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        ProjectilePrefab = Resources.Load<GameObject>("Prefabs/ProjectilePrefab");
+        Loaded = true;
     }
 
     void Update()
@@ -21,9 +27,40 @@ public class RangedEnemy : MonoBehaviour
         Proximity = Vector3.Distance(transform.position, Player.transform.position);
         if (Proximity < DetectionRange)
         {
-            RaycastHit Hit;
-            Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out Hit, DetectionRange);
-            //Check if Raycast hits player, if it does, then become Alert and shoot that fucker.
+            Vector3 Target = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+            gameObject.transform.LookAt(Target);
+            LineOfSight();
+            if (PlayerDetected && Loaded)
+            {
+                FireProjectile();
+            }
         }
+    }
+    private void LineOfSight()
+    {
+        RaycastHit Hit;
+        Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out Hit, DetectionRange);
+        if (Hit.collider != null)
+        {
+            if (Hit.collider.gameObject.CompareTag("Player"))
+            {
+                PlayerDetected = true;
+            }
+        }
+        else
+        {
+            PlayerDetected = false;
+        }
+    }
+    private void FireProjectile()
+    {
+        Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
+        StartCoroutine("Reload");
+    }
+    private IEnumerator Reload()
+    {
+        Loaded = false;
+        yield return new WaitForSeconds(ReloadSpeed);
+        Loaded = true;
     }
 }

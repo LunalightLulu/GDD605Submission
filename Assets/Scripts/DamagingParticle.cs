@@ -9,7 +9,6 @@ public class DamagingParticle : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            print("Hit");
             other.GetComponent<EnemyHealth>().TakeDamage(ParticleDamage);
         }
     }

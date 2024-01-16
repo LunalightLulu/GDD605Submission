@@ -34,7 +34,15 @@ public class ChasingEnemy : MonoBehaviour
         }
         else if (Chasing)
         {
-            Chase();
+            if (Vector3.Distance(gameObject.transform.position, Player.transform.position) < AttackRange)
+            {
+                Attack();
+            }
+            else
+            {
+                Chase();
+            }
+            
         }
     }
     private void LookAround()
@@ -66,16 +74,20 @@ public class ChasingEnemy : MonoBehaviour
     }
     private void Chase()
     {
+        if (Agent.isStopped == true)
+        {
+            Agent.isStopped = false;
+        }
         Vector3 Target = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
         gameObject.transform.LookAt(Target);
         Agent.SetDestination(Player.transform.position);
-        if (Vector3.Distance(gameObject.transform.position, Player.transform.position) < AttackRange)
-        {
-            Attack();
-        }
     }
     private void Attack()
     {
+        if (Agent.isStopped == false)
+        {
+            Agent.isStopped = true;
+        }
         PlayerHP.TakeDamage(AttackDamage);
     }
     public void Hit()

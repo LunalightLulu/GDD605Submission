@@ -2144,6 +2144,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3648674622657811934, guid: 7b4ad9db4d5d0a3409dad1ba23fe5918, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875274318678214466, guid: 7b4ad9db4d5d0a3409dad1ba23fe5918, type: 3}
+      propertyPath: AttackRange
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875274318678214466, guid: 7b4ad9db4d5d0a3409dad1ba23fe5918, type: 3}
+      propertyPath: AttackDamage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6041473787934691366, guid: 7b4ad9db4d5d0a3409dad1ba23fe5918, type: 3}
       propertyPath: m_Name
       value: ChasingEnemy - Big
@@ -2386,6 +2398,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 927612422102191649, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572366379897887287, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}

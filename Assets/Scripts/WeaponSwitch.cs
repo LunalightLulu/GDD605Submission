@@ -27,7 +27,7 @@ public class WeaponSwitch : MonoBehaviour
             {
                 ChangeWeapon(1);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            else if (Input.GetKeyDown(KeyCode.Alpha3) && CurrentWeapon != 2)
             {
                 ChangeWeapon(2);
             }

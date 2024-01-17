@@ -15,4 +15,8 @@ public class TimedDeletion : MonoBehaviour
         yield return new WaitForSeconds(TimeTillDeletion);
         Destroy(gameObject);
     }
+    private void OnDisable()
+    {
+        Destroy(gameObject);
+    }
 }

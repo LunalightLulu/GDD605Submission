@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b10ced00535894980cbcd24fe05173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HUD: {fileID: 0}
   Weapons:
   - {fileID: 3189459726146669437}
   - {fileID: 664121430012518902}
@@ -286,9 +287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 0}
+  HUD: {fileID: 0}
   MaxHP: 100
   CurrentHP: 0
-  IFrameTime: 0.2
+  IFrameTime: 0.4
 --- !u!1 &3572366379897887287
 GameObject:
   m_ObjectHideFlags: 0

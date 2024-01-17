@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] UIManager UI;
+    [SerializeField] HUDTracker HUD;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
     [SerializeField] float IFrameTime;
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         if (Vulnerable)
         {
             CurrentHP -= Damage;
+            HUD.UpdateHPDisplay(CurrentHP);
             StartCoroutine("IFrames");
             if (CurrentHP <= 0)
             {
@@ -33,10 +35,12 @@ public class PlayerHealth : MonoBehaviour
         if (CurrentHP + HP > MaxHP)
         {
             CurrentHP = MaxHP;
+            HUD.UpdateHPDisplay(CurrentHP);
         }
         else
         {
             CurrentHP += HP;
+            HUD.UpdateHPDisplay(CurrentHP);
         }
     }
 

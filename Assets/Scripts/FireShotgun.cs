@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireShotgun : MonoBehaviour
 {
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] AmmoTracker Tracker;
+    [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem ShotParticle;
     [SerializeField] float RateOfFire;
     [SerializeField] int MaxLoadedAmmo;

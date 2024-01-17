@@ -7,7 +7,7 @@ public class FirePistol : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] AmmoTracker Tracker;
+    [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;

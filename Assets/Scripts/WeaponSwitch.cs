@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour
 {
+    [SerializeField] HUDTracker HUD;
     [SerializeField] GameObject[] Weapons;
     private int CurrentWeapon;
     private bool CanSwitch;
@@ -11,6 +12,7 @@ public class WeaponSwitch : MonoBehaviour
     private void Start()
     {
         Weapons[0].SetActive(true);
+        Invoke("UpdateInitialIcon", 0.1f);
         CanSwitch = true;
     }
     private void Update()
@@ -59,6 +61,7 @@ public class WeaponSwitch : MonoBehaviour
         Weapons[CurrentWeapon].SetActive(false);
         Weapons[NewWeapon].SetActive(true);
         CurrentWeapon = NewWeapon;
+        HUD.UpdateAmmoIcon(CurrentWeapon);
     }
     public void EnableSwitch()
     {
@@ -67,5 +70,9 @@ public class WeaponSwitch : MonoBehaviour
     public void DisableSwitch()
     {
         CanSwitch = false;
+    }
+    private void UpdateInitialIcon()
+    {
+        HUD.UpdateAmmoIcon(0);
     }
 }

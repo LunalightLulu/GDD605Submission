@@ -9,7 +9,7 @@ public class FireRifle : MonoBehaviour
     [SerializeField] Camera PlayerCam;
     [SerializeField] CinemachineVirtualCamera CameraController;
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] AmmoTracker Tracker;
+    [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;

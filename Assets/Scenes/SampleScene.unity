@@ -2702,6 +2702,10 @@ PrefabInstance:
       value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: FireSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d127926a48863546b21f1090310b661, type: 3}
+    - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: Tracker
       value: 
       objectReference: {fileID: 374585847}
@@ -2729,6 +2733,10 @@ PrefabInstance:
       propertyPath: CameraController
       value: 
       objectReference: {fileID: 1165712393}
+    - target: {fileID: 516168086391683746, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 546160659269964955, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: m_RootOrder
       value: 3

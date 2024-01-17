@@ -605,7 +605,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7a1ca75a2b0be614289d9fa7b973ecb2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -840,7 +840,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1161,7 +1161,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.488
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1261,9 +1261,9 @@ MonoBehaviour:
   SwitchScript: {fileID: 30038434}
   Tracker: {fileID: 0}
   ShotParticle: {fileID: 0}
-  FireSFX: {fileID: 0}
-  ReloadSFX: {fileID: 0}
-  SputterSFX: {fileID: 0}
+  FireSFX: {fileID: 8300000, guid: 1d127926a48863546b21f1090310b661, type: 3}
+  ReloadSFX: {fileID: 8300000, guid: 9c5c30c30800396429b08e0c207947a4, type: 3}
+  SputterSFX: {fileID: 8300000, guid: 3858eb88d2efb3d49adcc51f7b4d578d, type: 3}
   RateOfFire: 0.8
   MaxLoadedAmmo: 2
   MaxHeldAmmo: 12

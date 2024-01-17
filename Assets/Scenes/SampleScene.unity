@@ -2697,9 +2697,9 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 374585847}
-    - target: {fileID: 30038434, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
-      propertyPath: Weapons.Array.size
-      value: 3
+    - target: {fileID: 463489963, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: m_Volume
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: Tracker
@@ -2713,6 +2713,10 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 374585847}
+    - target: {fileID: 1730427811, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: Tracker
       value: 

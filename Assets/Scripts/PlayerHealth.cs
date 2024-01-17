@@ -6,12 +6,15 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] UIManager UI;
     [SerializeField] HUDTracker HUD;
+    [SerializeField] AudioSource PlayerAudio;
+    [SerializeField] AudioClip[] DamageSounds;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
     [SerializeField] float IFrameTime;
     private bool Vulnerable;
     void Start()
     {
+        PlayerAudio = GetComponent<AudioSource>();
         CurrentHP = MaxHP;
         Vulnerable = true;
     }
@@ -22,12 +25,20 @@ public class PlayerHealth : MonoBehaviour
         {
             CurrentHP -= Damage;
             HUD.UpdateHPDisplay(CurrentHP);
+            PlayDamageAudio();
             StartCoroutine("IFrames");
             if (CurrentHP <= 0)
             {
                 Die();
             }
         }
+    }
+
+    private void PlayDamageAudio()
+    {
+        int PickClip = Random.Range(0, DamageSounds.Length);
+        PlayerAudio.clip = DamageSounds[PickClip];
+        PlayerAudio.Play();
     }
     
     public void RestoreHP(int HP)

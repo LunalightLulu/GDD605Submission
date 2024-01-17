@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int EnemyType;
+    [SerializeField] GameObject EnemyCorpse;
+    [SerializeField] AudioSource EnemyAudio;
+    [SerializeField] AudioClip DamagedAudio;
     [SerializeField] ChasingEnemy ChasingBehaviour;
+    [SerializeField] int EnemyType;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
     void Start()
     {
+        EnemyAudio = GetComponent<AudioSource>();
+        EnemyAudio.clip = DamagedAudio;
         CurrentHP = MaxHP;
         if (EnemyType == 0)
         {
@@ -20,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         CurrentHP -= Damage;
+        PlayDamageSFX();
         if (CurrentHP <= 0)
         {
             Die();
@@ -30,8 +36,14 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private void PlayDamageSFX()
+    {
+        EnemyAudio.Play();
+    }
+
     private void Die()
     {
-        gameObject.SetActive(false);
+        Instantiate(EnemyCorpse, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(gameObject);
     }
 }

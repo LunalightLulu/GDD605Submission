@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class FireShotgun : MonoBehaviour
 {
+    [SerializeField] AudioSource ShotgunAudio;
     [SerializeField] WeaponSwitch SwitchScript;
     [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem ShotParticle;
+    [SerializeField] AudioClip FireSFX;
+    [SerializeField] AudioClip ReloadSFX;
+    [SerializeField] AudioClip SputterSFX;
     [SerializeField] float RateOfFire;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
@@ -15,6 +19,7 @@ public class FireShotgun : MonoBehaviour
     private int CurrentHeldAmmo;
     void Start()
     {
+        ShotgunAudio = GetComponent<AudioSource>();
         ShotParticle = Resources.Load<ParticleSystem>("Prefabs/ShotgunParticle");
         RoFReset = true;
         StartingAmmo();
@@ -54,6 +59,7 @@ public class FireShotgun : MonoBehaviour
     {
         CurrentLoadedAmmo--;
         UpdateAmmoCount();
+        PlayFireSFX();
         Instantiate(ShotParticle, gameObject.transform);
     }
     private void Reload()
@@ -68,11 +74,23 @@ public class FireShotgun : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        PlayReloadSFX();
         UpdateAmmoCount();
+    }
+    private void PlayFireSFX()
+    {
+        ShotgunAudio.clip = FireSFX;
+        ShotgunAudio.Play();
+    }
+    private void PlayReloadSFX()
+    {
+        ShotgunAudio.clip = ReloadSFX;
+        ShotgunAudio.Play();
     }
     private void Sputter()
     {
-        //Sfx
+        ShotgunAudio.clip = SputterSFX;
+        ShotgunAudio.Play();
     }
     private void StartingAmmo()
     {

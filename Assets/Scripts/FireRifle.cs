@@ -8,11 +8,15 @@ public class FireRifle : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
     [SerializeField] CinemachineVirtualCamera CameraController;
+    [SerializeField] AudioSource RifleAudio;
     [SerializeField] WeaponSwitch SwitchScript;
     [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
+    [SerializeField] AudioClip FireSFX;
+    [SerializeField] AudioClip ReloadSFX;
+    [SerializeField] AudioClip SputterSFX;
     [SerializeField] float RateOfFire;
     [SerializeField] int WeaponDamage;
     [SerializeField] int Range;
@@ -26,6 +30,7 @@ public class FireRifle : MonoBehaviour
     private int CurrentHeldAmmo;
     void Start()
     {
+        RifleAudio = GetComponent<AudioSource>();
         HitParticle = Resources.Load<ParticleSystem>("Prefabs/HitParticle");
         FireParticle = Resources.Load<ParticleSystem>("Prefabs/FireParticleRifle");
         RoFReset = true;
@@ -71,6 +76,7 @@ public class FireRifle : MonoBehaviour
         CreateFireParticles();
         CurrentLoadedAmmo--;
         UpdateAmmoCount();
+        PlayFireSFX();
         //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
         RaycastHit Hit;
         Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);
@@ -96,11 +102,23 @@ public class FireRifle : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        PlayReloadSFX();
         UpdateAmmoCount();
+    }
+    private void PlayFireSFX()
+    {
+        RifleAudio.clip = FireSFX;
+        RifleAudio.Play();
+    }
+    private void PlayReloadSFX()
+    {
+        RifleAudio.clip = ReloadSFX;
+        RifleAudio.Play();
     }
     private void Sputter()
     {
-        //Play a sfx.
+        RifleAudio.clip = SputterSFX;
+        RifleAudio.Play();
     }
     private void StartingAmmo()
     {

@@ -6,11 +6,15 @@ public class FirePistol : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] Camera PlayerCam;
+    [SerializeField] AudioSource PistolAudio;
     [SerializeField] WeaponSwitch SwitchScript;
     [SerializeField] HUDTracker Tracker;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
+    [SerializeField] AudioClip FireSFX;
+    [SerializeField] AudioClip ReloadSFX;
+    [SerializeField] AudioClip SputterSFX;
     [SerializeField] float RateOfFire;
     [SerializeField] int WeaponDamage;
     [SerializeField] int Range;
@@ -21,6 +25,7 @@ public class FirePistol : MonoBehaviour
     private int CurrentHeldAmmo;
     void Start()
     {
+        PistolAudio = GetComponent<AudioSource>();
         HitParticle = Resources.Load<ParticleSystem>("Prefabs/HitParticle");
         FireParticle = Resources.Load<ParticleSystem>("Prefabs/FireParticlePistol");
         RoFReset = true;
@@ -62,6 +67,7 @@ public class FirePistol : MonoBehaviour
         CurrentLoadedAmmo--;
         UpdateAmmoCount();
         CreateFireParticles();
+        PlayFireSFX();
         //Do a raycast, check if anything was hit. If it was, do a particle effect, and then if it was an enemy, deal damage.
         RaycastHit Hit;
         Physics.Raycast(Player.transform.position, PlayerCam.transform.forward, out Hit, Range);
@@ -87,11 +93,23 @@ public class FirePistol : MonoBehaviour
             CurrentLoadedAmmo += CurrentHeldAmmo;
             CurrentHeldAmmo = 0;
         }
+        PlayReloadSFX();
         UpdateAmmoCount();
+    }
+    private void PlayFireSFX()
+    {
+        PistolAudio.clip = FireSFX;
+        PistolAudio.Play();
+    }
+    private void PlayReloadSFX()
+    {
+        PistolAudio.clip = ReloadSFX;
+        PistolAudio.Play();
     }
     private void Sputter()
     {
-        //Play a sfx.
+        PistolAudio.clip = SputterSFX;
+        PistolAudio.Play();
     }
     private void StartingAmmo()
     {

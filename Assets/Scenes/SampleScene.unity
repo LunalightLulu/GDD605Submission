@@ -636,6 +636,11 @@ MonoBehaviour:
   PlayerHP: {fileID: 115927585}
   LoadedDisplay: {fileID: 1423659164}
   TotalDisplay: {fileID: 736244014}
+  AmmoTypeDisplay: {fileID: 1384080950}
+  AmmoSprite:
+  - {fileID: 21300000, guid: f4b3c2cae78785e4594805c948cf361a, type: 3}
+  - {fileID: 21300000, guid: edaea882fe9100d4e8027182b6a3ec2c, type: 3}
+  - {fileID: 21300000, guid: f72c1a4c1ca8a824a92d0f82f71c6fd2, type: 3}
 --- !u!1 &405911270
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1dec967802e1f84bbe9a4b3a09d1b12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2688,6 +2693,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 30038434, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 374585847}
+    - target: {fileID: 30038434, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: Weapons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: Tracker
       value: 

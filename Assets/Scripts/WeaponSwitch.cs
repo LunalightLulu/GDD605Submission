@@ -31,10 +31,10 @@ public class WeaponSwitch : MonoBehaviour
             {
                 ChangeWeapon(2);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            /*else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 ChangeWeapon(3);
-            }
+            }*/
             else if (Input.mouseScrollDelta.y < 0)
             {
                 int NewWeapon = CurrentWeapon - 1;

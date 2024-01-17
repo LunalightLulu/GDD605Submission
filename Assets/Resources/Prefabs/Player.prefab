@@ -295,6 +295,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab384eb9a1c53214085c196e83294e88, type: 3}
   MaxHP: 100
   CurrentHP: 0
+  HPFromPickups: 0
   IFrameTime: 0.4
 --- !u!82 &1315818654
 AudioSource:
@@ -705,7 +706,7 @@ MonoBehaviour:
   PlayerCam: {fileID: 0}
   PistolAudio: {fileID: 0}
   SwitchScript: {fileID: 30038434}
-  Tracker: {fileID: 0}
+  HUD: {fileID: 0}
   HitParticle: {fileID: 0}
   FireParticle: {fileID: 0}
   FireParticleOffset: {x: 0, y: 0, z: 0.1}
@@ -717,6 +718,7 @@ MonoBehaviour:
   Range: 60
   MaxLoadedAmmo: 8
   MaxHeldAmmo: 64
+  AmmoFromPickups: 0
 --- !u!1001 &4999193778667698170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 30038434}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: WeaponDamage
-      value: 9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxLoadedAmmo
@@ -1259,7 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotgunAudio: {fileID: 0}
   SwitchScript: {fileID: 30038434}
-  Tracker: {fileID: 0}
+  HUD: {fileID: 0}
   ShotParticle: {fileID: 0}
   FireSFX: {fileID: 8300000, guid: 1d127926a48863546b21f1090310b661, type: 3}
   ReloadSFX: {fileID: 8300000, guid: 9c5c30c30800396429b08e0c207947a4, type: 3}
@@ -1267,3 +1269,4 @@ MonoBehaviour:
   RateOfFire: 0.8
   MaxLoadedAmmo: 2
   MaxHeldAmmo: 12
+  AmmoFromPickups: 0

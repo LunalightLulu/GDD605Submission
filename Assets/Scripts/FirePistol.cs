@@ -8,7 +8,7 @@ public class FirePistol : MonoBehaviour
     [SerializeField] Camera PlayerCam;
     [SerializeField] AudioSource PistolAudio;
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] HUDTracker Tracker;
+    [SerializeField] HUDTracker HUD;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
@@ -20,6 +20,7 @@ public class FirePistol : MonoBehaviour
     [SerializeField] int Range;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int AmmoFromPickups;
     private bool RoFReset;
     private int CurrentLoadedAmmo;
     private int CurrentHeldAmmo;
@@ -134,6 +135,18 @@ public class FirePistol : MonoBehaviour
     }
     private void UpdateAmmoCount()
     {
-        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+        HUD.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+    }
+    public void AmmoPickup()
+    {
+        if (CurrentHeldAmmo + AmmoFromPickups > MaxHeldAmmo)
+        {
+            CurrentHeldAmmo = MaxHeldAmmo;
+        }
+        else
+        {
+            CurrentHeldAmmo += AmmoFromPickups;
+        }
+        UpdateAmmoCount();
     }
 }

@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] AudioClip[] DamageSounds;
     [SerializeField] int MaxHP;
     [SerializeField] int CurrentHP;
+    [SerializeField] int HPFromPickups;
     [SerializeField] float IFrameTime;
     private bool Vulnerable;
     void Start()
@@ -41,16 +42,16 @@ public class PlayerHealth : MonoBehaviour
         PlayerAudio.Play();
     }
     
-    public void RestoreHP(int HP)
+    public void RestoreHP()
     {
-        if (CurrentHP + HP > MaxHP)
+        if (CurrentHP + HPFromPickups > MaxHP)
         {
             CurrentHP = MaxHP;
             HUD.UpdateHPDisplay(CurrentHP);
         }
         else
         {
-            CurrentHP += HP;
+            CurrentHP += HPFromPickups;
             HUD.UpdateHPDisplay(CurrentHP);
         }
     }

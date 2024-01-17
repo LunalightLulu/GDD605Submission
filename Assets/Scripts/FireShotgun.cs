@@ -6,7 +6,7 @@ public class FireShotgun : MonoBehaviour
 {
     [SerializeField] AudioSource ShotgunAudio;
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] HUDTracker Tracker;
+    [SerializeField] HUDTracker HUD;
     [SerializeField] ParticleSystem ShotParticle;
     [SerializeField] AudioClip FireSFX;
     [SerializeField] AudioClip ReloadSFX;
@@ -14,6 +14,7 @@ public class FireShotgun : MonoBehaviour
     [SerializeField] float RateOfFire;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int AmmoFromPickups;
     private bool RoFReset;
     private int CurrentLoadedAmmo;
     private int CurrentHeldAmmo;
@@ -107,6 +108,18 @@ public class FireShotgun : MonoBehaviour
     }
     private void UpdateAmmoCount()
     {
-        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+        HUD.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+    }
+    public void AmmoPickup()
+    {
+        if (CurrentHeldAmmo + AmmoFromPickups > MaxHeldAmmo)
+        {
+            CurrentHeldAmmo = MaxHeldAmmo;
+        }
+        else
+        {
+            CurrentHeldAmmo += AmmoFromPickups;
+        }
+        UpdateAmmoCount();
     }
 }

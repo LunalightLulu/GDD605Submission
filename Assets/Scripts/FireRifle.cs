@@ -10,7 +10,7 @@ public class FireRifle : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera CameraController;
     [SerializeField] AudioSource RifleAudio;
     [SerializeField] WeaponSwitch SwitchScript;
-    [SerializeField] HUDTracker Tracker;
+    [SerializeField] HUDTracker HUD;
     [SerializeField] ParticleSystem HitParticle;
     [SerializeField] ParticleSystem FireParticle;
     [SerializeField] Vector3 FireParticleOffset;
@@ -24,6 +24,7 @@ public class FireRifle : MonoBehaviour
     [SerializeField] int ZoomedFoV;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int AmmoFromPickups;
     private bool RoFReset;
     private bool Zoomed;
     private int CurrentLoadedAmmo;
@@ -143,7 +144,19 @@ public class FireRifle : MonoBehaviour
     }
     private void UpdateAmmoCount()
     {
-        Tracker.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+        HUD.UpdateAmmoDisplay(CurrentLoadedAmmo, CurrentHeldAmmo);
+    }
+    public void AmmoPickup()
+    {
+        if (CurrentHeldAmmo + AmmoFromPickups > MaxHeldAmmo)
+        {
+            CurrentHeldAmmo = MaxHeldAmmo;
+        }
+        else
+        {
+            CurrentHeldAmmo += AmmoFromPickups;
+        }
+        UpdateAmmoCount();
     }
     private void RifleZoom()
     {

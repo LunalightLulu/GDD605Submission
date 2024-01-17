@@ -120,6 +120,9 @@ public class FireShotgun : MonoBehaviour
         {
             CurrentHeldAmmo += AmmoFromPickups;
         }
-        UpdateAmmoCount();
+        if (gameObject.activeInHierarchy == true)
+        {
+            UpdateAmmoCount();
+        }
     }
 }

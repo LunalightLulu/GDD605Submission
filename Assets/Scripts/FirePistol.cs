@@ -147,6 +147,9 @@ public class FirePistol : MonoBehaviour
         {
             CurrentHeldAmmo += AmmoFromPickups;
         }
-        UpdateAmmoCount();
+        if (gameObject.activeInHierarchy == true)
+        {
+            UpdateAmmoCount();
+        }
     }
 }

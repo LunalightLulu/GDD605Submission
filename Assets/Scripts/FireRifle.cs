@@ -156,7 +156,10 @@ public class FireRifle : MonoBehaviour
         {
             CurrentHeldAmmo += AmmoFromPickups;
         }
-        UpdateAmmoCount();
+        if (gameObject.activeInHierarchy == true)
+        {
+            UpdateAmmoCount();
+        }
     }
     private void RifleZoom()
     {

@@ -295,7 +295,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ab384eb9a1c53214085c196e83294e88, type: 3}
   MaxHP: 100
   CurrentHP: 0
-  HPFromPickups: 0
+  HPFromPickups: 30
   IFrameTime: 0.4
 --- !u!82 &1315818654
 AudioSource:
@@ -718,7 +718,7 @@ MonoBehaviour:
   Range: 60
   MaxLoadedAmmo: 8
   MaxHeldAmmo: 64
-  AmmoFromPickups: 0
+  AmmoFromPickups: 32
 --- !u!1001 &4999193778667698170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,6 +765,10 @@ PrefabInstance:
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxLoadedAmmo
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: AmmoFromPickups
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5123981478236654774, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: m_RootOrder
@@ -1162,7 +1166,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.488
   m_Pitch: 1
   Loop: 0
@@ -1269,4 +1273,4 @@ MonoBehaviour:
   RateOfFire: 0.8
   MaxLoadedAmmo: 2
   MaxHeldAmmo: 12
-  AmmoFromPickups: 0
+  AmmoFromPickups: 4

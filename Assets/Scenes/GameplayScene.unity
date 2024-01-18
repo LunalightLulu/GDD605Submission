@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: aea3b189d0e62d244be84374f27af628, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 76c0e3618bca4cf4f8999117be74c5c2, type: 2}
 --- !u!1001 &1662055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3371,6 +3371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RetryButton: {fileID: 1620929272}
   ExitButton: {fileID: 1485505554}
+  GameplayScene: GameplayScene
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -10734,10 +10735,6 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 374585847}
-    - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
-      propertyPath: StartingHeldAmmo
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1215651531, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: UI
       value: 
@@ -10754,10 +10751,6 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1601749973}
-    - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
-      propertyPath: AmmoFromPickups
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: CameraController
       value: 
@@ -10822,10 +10815,6 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1601749973}
-    - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
-      propertyPath: StartingHeldAmmo
-      value: 16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
 --- !u!4 &9049106323836340930 stripped

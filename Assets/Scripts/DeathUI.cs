@@ -8,6 +8,7 @@ public class DeathUI : MonoBehaviour
 {
     [SerializeField] Button RetryButton;
     [SerializeField] Button ExitButton;
+    [SerializeField] string GameplayScene;
     private void Start()
     {
         RetryButton.onClick.AddListener(Retry);
@@ -15,7 +16,7 @@ public class DeathUI : MonoBehaviour
     }
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        SceneManager.LoadScene(GameplayScene);
     }
     public void Exit()
     {

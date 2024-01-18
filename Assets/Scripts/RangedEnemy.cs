@@ -6,6 +6,7 @@ public class RangedEnemy : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject ProjectilePrefab;
+    [SerializeField] Vector3 ProjectileOffset;
     [SerializeField] int DetectionRange;
     [SerializeField] float ReloadSpeed;
     private float Proximity;
@@ -54,7 +55,7 @@ public class RangedEnemy : MonoBehaviour
     }
     private void FireProjectile()
     {
-        Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
+        Instantiate(ProjectilePrefab, transform.position + ProjectileOffset, Quaternion.identity);
         StartCoroutine("Reload");
     }
     private IEnumerator Reload()

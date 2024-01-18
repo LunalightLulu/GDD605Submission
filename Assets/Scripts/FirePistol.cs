@@ -17,6 +17,8 @@ public class FirePistol : MonoBehaviour
     [SerializeField] AudioClip SputterSFX;
     [SerializeField] float RateOfFire;
     [SerializeField] int WeaponDamage;
+    [SerializeField] int BaseWeaponDamage;
+    [SerializeField] int BoostWeaponDamage;
     [SerializeField] int Range;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
@@ -32,6 +34,7 @@ public class FirePistol : MonoBehaviour
         RoFReset = true;
         StartingAmmo();
         UpdateAmmoCount();
+        WeaponDamage = BaseWeaponDamage;
     }
     private void OnEnable()
     {
@@ -150,6 +153,17 @@ public class FirePistol : MonoBehaviour
         if (gameObject.activeInHierarchy == true)
         {
             UpdateAmmoCount();
+        }
+    }
+    public void DamageBoost(bool Active)
+    {
+        if (Active)
+        {
+            WeaponDamage = BoostWeaponDamage;
+        }
+        else if (!Active)
+        {
+            WeaponDamage = BaseWeaponDamage;
         }
     }
 }

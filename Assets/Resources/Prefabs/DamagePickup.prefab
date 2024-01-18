@@ -48,12 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  HPScript: {fileID: 0}
-  PistolScript: {fileID: 0}
-  RifleScript: {fileID: 0}
-  ShotgunScript: {fileID: 0}
-  PlayerController: {fileID: 0}
-  Type: 3
+  ProcessScript: {fileID: 0}
+  Type: Damage
 --- !u!64 &-7613110389618252127
 MeshCollider:
   m_ObjectHideFlags: 0

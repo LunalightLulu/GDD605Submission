@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class DamagingParticle : MonoBehaviour
 {
+    public bool Boosted;
     [SerializeField] int ParticleDamage;
+    [SerializeField] int BoostedDamage;
     private void OnParticleCollision(GameObject other)
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHealth>().TakeDamage(ParticleDamage);
+            if (!Boosted)
+            {
+                other.GetComponent<EnemyHealth>().TakeDamage(ParticleDamage);
+            }
+            else if (Boosted)
+            {
+                other.GetComponent<EnemyHealth>().TakeDamage(BoostedDamage);
+            }
         }
     }
 }

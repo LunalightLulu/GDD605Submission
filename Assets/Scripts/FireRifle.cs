@@ -19,6 +19,8 @@ public class FireRifle : MonoBehaviour
     [SerializeField] AudioClip SputterSFX;
     [SerializeField] float RateOfFire;
     [SerializeField] int WeaponDamage;
+    [SerializeField] int BaseWeaponDamage;
+    [SerializeField] int BoostWeaponDamage;
     [SerializeField] int Range;
     [SerializeField] int UnzoomedFoV;
     [SerializeField] int ZoomedFoV;
@@ -37,6 +39,7 @@ public class FireRifle : MonoBehaviour
         RoFReset = true;
         StartingAmmo();
         UpdateAmmoCount();
+        WeaponDamage = BaseWeaponDamage;
     }
     private void OnEnable()
     {
@@ -159,6 +162,17 @@ public class FireRifle : MonoBehaviour
         if (gameObject.activeInHierarchy == true)
         {
             UpdateAmmoCount();
+        }
+    }
+    public void DamageBoost(bool Active)
+    {
+        if (Active)
+        {
+            WeaponDamage = BoostWeaponDamage;
+        }
+        else if (!Active)
+        {
+            WeaponDamage = BaseWeaponDamage;
         }
     }
     private void RifleZoom()

@@ -10,6 +10,8 @@ public class HUDTracker : MonoBehaviour
     [SerializeField] TextMeshProUGUI LoadedDisplay;
     [SerializeField] TextMeshProUGUI TotalDisplay;
     [SerializeField] GameObject AmmoTypeDisplay;
+    [SerializeField] GameObject SpeedBoostIcon;
+    [SerializeField] GameObject DamageBoostIcon;
     [SerializeField] Sprite[] AmmoSprite;
     private Image AmmoTypeImage;
     private void Start()
@@ -28,5 +30,13 @@ public class HUDTracker : MonoBehaviour
     public void UpdateAmmoIcon(int AmmoType)
     {
         AmmoTypeImage.sprite = AmmoSprite[AmmoType];
+    }
+    public void SpeedBoosted(bool Active)
+    {
+        SpeedBoostIcon.SetActive(Active);
+    }
+    public void DamageBoosted(bool Active)
+    {
+        DamageBoostIcon.SetActive(Active);
     }
 }

@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 927612422102191661}
   - component: {fileID: 1215651531}
   - component: {fileID: 1315818654}
+  - component: {fileID: 6700980721945924985}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -393,6 +394,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6700980721945924985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927612422102191649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4b0e294c701b04d9ce2eaa0e0069a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPScript: {fileID: 0}
+  PistolScript: {fileID: 0}
+  RifleScript: {fileID: 0}
+  ShotgunScript: {fileID: 0}
+  PlayerController: {fileID: 0}
+  HUD: {fileID: 0}
+  PickupTypes:
+  - Health
+  - Ammo
+  - Speed
+  - Damage
+  BaseSpeed: 10
+  BaseSprint: 12
+  BoostedSpeed: 18
+  BoostedSprint: 24
+  SpeedBoostTime: 15
+  DamageBoostTime: 10
 --- !u!1 &3572366379897887287
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +745,8 @@ MonoBehaviour:
   SputterSFX: {fileID: 8300000, guid: 3af76450cbf66cf4e98bb218df626827, type: 3}
   RateOfFire: 0.4
   WeaponDamage: 20
+  BaseWeaponDamage: 20
+  BoostWeaponDamage: 40
   Range: 60
   MaxLoadedAmmo: 8
   MaxHeldAmmo: 64
@@ -760,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 30038434}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: WeaponDamage
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxLoadedAmmo
@@ -769,6 +801,14 @@ PrefabInstance:
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: AmmoFromPickups
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: BaseWeaponDamage
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: BoostWeaponDamage
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5123981478236654774, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: m_RootOrder

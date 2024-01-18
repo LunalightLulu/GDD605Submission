@@ -15,6 +15,7 @@ public class FireShotgun : MonoBehaviour
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
     [SerializeField] int AmmoFromPickups;
+    private bool DamageBoosted;
     private bool RoFReset;
     private int CurrentLoadedAmmo;
     private int CurrentHeldAmmo;
@@ -61,7 +62,11 @@ public class FireShotgun : MonoBehaviour
         CurrentLoadedAmmo--;
         UpdateAmmoCount();
         PlayFireSFX();
-        Instantiate(ShotParticle, gameObject.transform);
+        var Shot = Instantiate(ShotParticle, gameObject.transform);
+        if (DamageBoosted)
+        {
+            Shot.GetComponent<DamagingParticle>().Boosted = true;
+        }
     }
     private void Reload()
     {
@@ -124,5 +129,9 @@ public class FireShotgun : MonoBehaviour
         {
             UpdateAmmoCount();
         }
+    }
+    public void DamageBoost(bool Active)
+    {
+        DamageBoosted = Active;
     }
 }

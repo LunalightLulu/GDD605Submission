@@ -48,12 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  HPScript: {fileID: 0}
-  PistolScript: {fileID: 0}
-  RifleScript: {fileID: 0}
-  ShotgunScript: {fileID: 0}
-  PlayerController: {fileID: 0}
-  Type: 1
+  ProcessScript: {fileID: 0}
+  Type: Ammo
 --- !u!33 &7955931799893560428
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -3169,7 +3169,7 @@ Transform:
   - {fileID: 2144376339}
   - {fileID: 374585842}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &645707343
 MonoBehaviour:
@@ -3463,7 +3463,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 76.544, y: -30, z: 0}
 --- !u!1001 &713620481
 PrefabInstance:
@@ -4824,7 +4824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5998,7 +5998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1151005767
 PrefabInstance:
@@ -8312,6 +8312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3940060228014551361, guid: f6e2c9432aaeedd41b502c368a487333, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4460313273916713979, guid: f6e2c9432aaeedd41b502c368a487333, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -8784,7 +8788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9992,6 +9996,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1151ba98b157b8b47b7af45b7b886023, type: 3}
+--- !u!1001 &2012779360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8964450889742167908, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_Name
+      value: AmmoPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964450889742167910, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e0f1c803d70581459ea039e7ae5a5a4, type: 3}
 --- !u!1001 &2050269219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10673,6 +10734,10 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 374585847}
+    - target: {fileID: 934850927, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: StartingHeldAmmo
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1215651531, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: UI
       value: 
@@ -10690,12 +10755,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1601749973}
     - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: AmmoFromPickups
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 492902255048596595, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: CameraController
       value: 
       objectReference: {fileID: 1165712393}
     - target: {fileID: 546160659269964955, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 546160659269964955, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10753,6 +10822,10 @@ PrefabInstance:
       propertyPath: PlayerCam
       value: 
       objectReference: {fileID: 1601749973}
+    - target: {fileID: 8275308739307637451, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
+      propertyPath: StartingHeldAmmo
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e49c58b65c89e45b35812838c241e1, type: 3}
 --- !u!4 &9049106323836340930 stripped

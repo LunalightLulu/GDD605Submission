@@ -750,8 +750,8 @@ MonoBehaviour:
   Range: 20
   MaxLoadedAmmo: 8
   MaxHeldAmmo: 80
-  StartingHeldAmmo: 40
-  AmmoFromPickups: 32
+  StartingHeldAmmo: 16
+  AmmoFromPickups: 16
 --- !u!1001 &4999193778667698170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: AmmoFromPickups
-      value: 45
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: BaseWeaponDamage
@@ -1322,5 +1322,5 @@ MonoBehaviour:
   RateOfFire: 0.8
   MaxLoadedAmmo: 2
   MaxHeldAmmo: 20
-  StartingHeldAmmo: 6
+  StartingHeldAmmo: 4
   AmmoFromPickups: 4

@@ -5,16 +5,16 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] GameObject Player;
+    [SerializeField] Vector3 TargetOffset;
     [SerializeField] float ProjectileSpeed;
     [SerializeField] int ProjectileDamage;
     private PlayerHealth PlayerHP;
     private Vector3 TargetPosition;
-    private Vector3 PositionalOffset = new Vector3(0, 1, 0);
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         PlayerHP = Player.GetComponent<PlayerHealth>();
-        TargetPosition = ((Player.transform.position - transform.position) * 10) + Player.transform.position + PositionalOffset;
+        TargetPosition = (((Player.transform.position + TargetOffset) - transform.position) * 10) + Player.transform.position;
     }
 
     void Update()

@@ -6,6 +6,7 @@ public class RangedEnemy : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] GameObject ProjectilePrefab;
+    [SerializeField] Vector3 TargetOffset;
     [SerializeField] Vector3 ProjectileOffset;
     [SerializeField] int DetectionRange;
     [SerializeField] float ReloadSpeed;
@@ -40,12 +41,17 @@ public class RangedEnemy : MonoBehaviour
     private void LineOfSight()
     {
         RaycastHit Hit;
-        Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out Hit, DetectionRange);
+        Vector3 Direction = ((Player.transform.position + TargetOffset) - (transform.position + ProjectileOffset)).normalized;
+        Physics.Raycast(transform.position + ProjectileOffset, Direction, out Hit, DetectionRange);
         if (Hit.collider != null)
         {
             if (Hit.collider.gameObject.CompareTag("Player"))
             {
                 PlayerDetected = true;
+            }
+            else
+            {
+                PlayerDetected = false;
             }
         }
         else

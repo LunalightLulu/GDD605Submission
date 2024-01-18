@@ -50,6 +50,9 @@ MonoBehaviour:
   Player: {fileID: 0}
   ProcessScript: {fileID: 0}
   Type: Speed
+  RotationRate: {x: 0, y: 0.03, z: 0}
+  FlotationRate: {x: 0, y: 0.0001, z: 0}
+  FlotationFluctuation: {x: 0, y: 0.2, z: 0}
 --- !u!64 &-7732494642210731350
 MeshCollider:
   m_ObjectHideFlags: 0

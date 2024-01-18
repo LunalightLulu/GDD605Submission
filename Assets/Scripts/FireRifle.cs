@@ -26,6 +26,7 @@ public class FireRifle : MonoBehaviour
     [SerializeField] int ZoomedFoV;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int StartingHeldAmmo;
     [SerializeField] int AmmoFromPickups;
     private bool RoFReset;
     private bool Zoomed;
@@ -127,7 +128,7 @@ public class FireRifle : MonoBehaviour
     private void StartingAmmo()
     {
         CurrentLoadedAmmo = MaxLoadedAmmo;
-        CurrentHeldAmmo = MaxHeldAmmo / 2;
+        CurrentHeldAmmo = StartingHeldAmmo;
     }
     private void CreateFireParticles()
     {

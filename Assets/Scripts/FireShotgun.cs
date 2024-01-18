@@ -14,6 +14,7 @@ public class FireShotgun : MonoBehaviour
     [SerializeField] float RateOfFire;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int StartingHeldAmmo;
     [SerializeField] int AmmoFromPickups;
     private bool DamageBoosted;
     private bool RoFReset;
@@ -101,7 +102,7 @@ public class FireShotgun : MonoBehaviour
     private void StartingAmmo()
     {
         CurrentLoadedAmmo = MaxLoadedAmmo;
-        CurrentHeldAmmo = MaxHeldAmmo / 2;
+        CurrentHeldAmmo = StartingHeldAmmo;
     }
     private IEnumerator ResetRoF()
     {

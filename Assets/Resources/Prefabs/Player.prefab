@@ -749,7 +749,8 @@ MonoBehaviour:
   BoostWeaponDamage: 40
   Range: 60
   MaxLoadedAmmo: 8
-  MaxHeldAmmo: 64
+  MaxHeldAmmo: 80
+  StartingHeldAmmo: 40
   AmmoFromPickups: 32
 --- !u!1001 &4999193778667698170
 PrefabInstance:
@@ -784,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 9df20af54ac5bdb46924d312c095bedb, type: 3}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxHeldAmmo
-      value: 90
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: SwitchScript
@@ -796,7 +797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: MaxLoadedAmmo
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: AmmoFromPickups
@@ -805,6 +806,10 @@ PrefabInstance:
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: BaseWeaponDamage
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: StartingHeldAmmo
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: BoostWeaponDamage
@@ -1312,5 +1317,6 @@ MonoBehaviour:
   SputterSFX: {fileID: 8300000, guid: 3858eb88d2efb3d49adcc51f7b4d578d, type: 3}
   RateOfFire: 0.8
   MaxLoadedAmmo: 2
-  MaxHeldAmmo: 12
+  MaxHeldAmmo: 20
+  StartingHeldAmmo: 6
   AmmoFromPickups: 4

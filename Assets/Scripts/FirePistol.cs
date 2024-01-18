@@ -22,6 +22,7 @@ public class FirePistol : MonoBehaviour
     [SerializeField] int Range;
     [SerializeField] int MaxLoadedAmmo;
     [SerializeField] int MaxHeldAmmo;
+    [SerializeField] int StartingHeldAmmo;
     [SerializeField] int AmmoFromPickups;
     private bool RoFReset;
     private int CurrentLoadedAmmo;
@@ -118,7 +119,7 @@ public class FirePistol : MonoBehaviour
     private void StartingAmmo()
     {
         CurrentLoadedAmmo = MaxLoadedAmmo;
-        CurrentHeldAmmo = MaxHeldAmmo / 2;
+        CurrentHeldAmmo = StartingHeldAmmo;
     }
     private void CreateFireParticles()
     {

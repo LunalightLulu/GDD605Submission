@@ -411,12 +411,14 @@ MonoBehaviour:
   RifleScript: {fileID: 0}
   ShotgunScript: {fileID: 0}
   PlayerController: {fileID: 0}
+  UI: {fileID: 0}
   HUD: {fileID: 0}
   PickupTypes:
   - Health
   - Ammo
   - Speed
   - Damage
+  - Victory
   BaseSpeed: 10
   BaseSprint: 12
   BoostedSpeed: 18

@@ -9,6 +9,7 @@ public class PlayerBoosts : MonoBehaviour
     [SerializeField] FireRifle RifleScript;
     [SerializeField] FireShotgun ShotgunScript;
     [SerializeField] StarterAssets.FirstPersonController PlayerController;
+    [SerializeField] UIManager UI;
     [SerializeField] HUDTracker HUD;
     [SerializeField] string[] PickupTypes;
     [SerializeField] float BaseSpeed;
@@ -47,6 +48,10 @@ public class PlayerBoosts : MonoBehaviour
         else if (Type == PickupTypes[3])
         {
             DamagePickup();
+        }
+        else if (Type == PickupTypes[4])
+        {
+            Victory();
         }
     }
     private void HealthPickup()
@@ -100,5 +105,10 @@ public class PlayerBoosts : MonoBehaviour
             ShotgunScript.DamageBoost(false);
             HUD.DamageBoosted(false);
         }
+    }
+    private void Victory()
+    {
+        Time.timeScale = 0;
+        UI.Victory();
     }
 }

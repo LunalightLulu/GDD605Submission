@@ -104,7 +104,7 @@ MonoBehaviour:
   PlayerHP: {fileID: 0}
   RotationRate: {x: 0, y: 0.03, z: 0}
   LookRotationRange: 30
-  DetectionRange: 15
+  DetectionRange: 30
   AttackRange: 3.3
   AttackDamage: 25
 --- !u!114 &7836466932028527521

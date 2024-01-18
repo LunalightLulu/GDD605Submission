@@ -747,7 +747,7 @@ MonoBehaviour:
   WeaponDamage: 20
   BaseWeaponDamage: 20
   BoostWeaponDamage: 40
-  Range: 60
+  Range: 20
   MaxLoadedAmmo: 8
   MaxHeldAmmo: 80
   StartingHeldAmmo: 40
@@ -759,6 +759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1785749843632769126}
     m_Modifications:
+    - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
+      propertyPath: Range
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4879535556901317513, guid: 36b81272fbfc45240b91786d59a1a198, type: 3}
       propertyPath: Player
       value: 
